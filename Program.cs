@@ -9,9 +9,6 @@ using RedditFullStack.models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
-
 // Sætter CORS så API'en kan bruges fra andre domæner
 var AllowSomeStuff = "_AllowSomeStuff";
 builder.Services.AddCors(options =>
@@ -27,17 +24,21 @@ builder.Services.AddCors(options =>
 
 
 
-
-
 // Tilføj DbContext factory som service.
 builder.Services.AddDbContext<TaskContext>(options =>
   options.UseSqlite(builder.Configuration.GetConnectionString("ContextSQLite")));
 
 
+// Tilføj DataService så den kan bruges i endpoints
+builder.Services.AddScoped<DataService>();
 
 
 
+var app = builder.Build();
 
+
+app.UseHttpsRedirection();
+app.UseCors(AllowSomeStuff);
 
 using (var db = new TaskContext())
 {
@@ -54,13 +55,20 @@ using (var db = new TaskContext())
     }
 
 
-    var app = builder.Build();
 
 
 app.MapGet("/get", (DataService service) =>
 {
     return service.GetAllTask();
 });
+
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+
+
+
 /*
 app.MapPost("/createpost", (DataService service, PostDTO data) =>
  {
