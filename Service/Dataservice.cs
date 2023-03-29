@@ -51,6 +51,11 @@ public class DataService
 
     }
 
+public List<User> GetAllUsers()
+    {
+        return db.Users.ToList();
+    }
+
 
 /*
     public List<User> GetAllUsers()

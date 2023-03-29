@@ -46,43 +46,49 @@ using (var db = new TaskContext())
     
     // Create
     Console.WriteLine("Submitting data to DB");
-    db.Add(new TodoTask("tester",false));
+    //db.Add(new TodoTask("tester",false));
     //db.Add(new Post("Titel","Rasmus", "test text", 5)); //Test om der er hul til post tablen!
-    //db.Add(new User( "Mads"));
+    db.Add(new User( "Mads"));
     db.SaveChanges();
 
 
 
     }
 
-
-
-
+// Henter alle tasks
 app.MapGet("/get/all/tasks", (DataService service) =>
 {
     return service.GetAllTask();
 });
 
+// Henter post på dets id
 app.MapGet("/get/post/{postid}", (DataService service, int postid) =>
 {
     return service.GetPostById(postid);  
 });
 
+// Henter alle kommentarer
 app.MapGet("/get/all/comments", (DataService service) =>
 {
     return service.GetAllComments();
 });
 
-
+// Henter en kommmentar på dets id
 app.MapGet("/get/comment/{commentid}", (DataService service, int commentid) =>
 {
     return service.GetCommentById(commentid);  
 });
 
-
+// Henter user på bruger id
 app.MapGet("/get/user/{userid}", (DataService service, int userid) =>
 {
     return service.GetUserById(userid);  
+});
+
+// Henter alle brugere
+app.MapGet("/get/all/users", (DataService service) =>
+{
+    return service.GetAllUsers();
 });
 
 
