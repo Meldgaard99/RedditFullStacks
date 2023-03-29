@@ -1300,19 +1300,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/marie-louise/.nuget/packages/": {}
+    "/Users/rasmusmeldgaardjensen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marie-louise/Desktop/RedditFullStacks/RedditClone.csproj",
+      "projectUniqueName": "/Users/rasmusmeldgaardjensen/Desktop/Programmering-it/RedditFullStacks/RedditClone.csproj",
       "projectName": "RedditClone",
-      "projectPath": "/Users/marie-louise/Desktop/RedditFullStacks/RedditClone.csproj",
-      "packagesPath": "/Users/marie-louise/.nuget/packages/",
-      "outputPath": "/Users/marie-louise/Desktop/RedditFullStacks/obj/",
+      "projectPath": "/Users/rasmusmeldgaardjensen/Desktop/Programmering-it/RedditFullStacks/RedditClone.csproj",
+      "packagesPath": "/Users/rasmusmeldgaardjensen/.nuget/packages/",
+      "outputPath": "/Users/rasmusmeldgaardjensen/Desktop/Programmering-it/RedditFullStacks/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/marie-louise/.nuget/NuGet/NuGet.Config"
+        "/Users/rasmusmeldgaardjensen/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
