@@ -21,6 +21,27 @@ public class DataService
         return db.Tasks.ToList();
     }
 
+
+    //henter post og returner dem som en liste
+    public List<Post> GetAllPosts()
+    {
+        return db.Posts.ToList();
+    }
+
+
+
+//Ikke færdig, mangler at finde den korrekte syntax 
+    public List<Post> GetPostById(int postid)
+    {
+        return db.Posts.ToList();
+
+    }
+
+
+
+
+
+/*
     public List<User> GetAllUsers()
     {
         return db.Users.ToList();
@@ -31,6 +52,10 @@ public class DataService
     {
         return db.Posts.ToList();
     }
+*/
+
+
+
 
 
 //Test med at lave en post

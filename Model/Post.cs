@@ -9,7 +9,7 @@ namespace RedditFullStack.models
     {
         public string Title { get; set; }
 
-        public long PostId { get; set; }
+        public int PostId { get; set; }
                 //public EF kræver en id til at identificere primary keys! :)
 
         public string User { get; set; }

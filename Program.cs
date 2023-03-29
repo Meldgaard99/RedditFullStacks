@@ -62,6 +62,19 @@ app.MapGet("/get", (DataService service) =>
     return service.GetAllTask();
 });
 
+app.MapGet("/get/post/{postid}", (DataService service, int postid) =>
+{
+    return service.GetPostById(postid);  
+});
+
+/*
+Ikke færdig mangler at finde den rigtig syntax 
+app.MapGet("/getallpostbyid", (DataService service, long postid) =>
+{
+    return service.GetPostById();  
+});
+*/
+
 
 //Rasmus get calls 
 /*
@@ -85,7 +98,11 @@ app.MapGet("/getallcomment/{id}"
 
 */
 
-app.MapGet("/", () => "Hello World!");
+// Read
+    Console.WriteLine("Find det sidste task");
+    
+
+//app.MapGet("/", () => "Hello World!");
 
 
 app.Run();
