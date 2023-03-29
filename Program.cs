@@ -63,7 +63,30 @@ app.MapGet("/get", (DataService service) =>
 });
 
 
+//Rasmus get calls 
+/*
+//Hent user 
+app.MapGet("/getallusers", ) =>
+{
+});
+
+//Hent post id
+app.MapGet("/getpost/{id}", ) =>
+{
+    return service.GetPost(id);
+});
+
+//Hent user id
+app.MapGet("/getuser/{id}", () =>
+{
+    return service.GetUser(id);
+});
+app.MapGet("/getallcomment/{id}"
+
+*/
+
 app.MapGet("/", () => "Hello World!");
+
 
 app.Run();
 
