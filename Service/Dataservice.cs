@@ -20,7 +20,10 @@ public class DataService
         return db.Tasks.ToList();
     }
 
- 
+ public List<Post> GetAllPosts()
+    {
+        return db.Posts.ToList();
+    }
 
     //henter post og returner dem som en liste
     public List<Comment> GetAllComments()

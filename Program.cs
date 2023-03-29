@@ -44,21 +44,27 @@ using (var db = new TaskContext())
 {
     Console.WriteLine($"Database path: {db.DbPath}.");
     
-    // Create
+    /*// Create
     Console.WriteLine("Submitting data to DB");
-    //db.Add(new TodoTask("tester",false));
     //db.Add(new Post("Titel","Rasmus", "test text", 5)); //Test om der er hul til post tablen!
     db.Add(new User( "Mads"));
     db.SaveChanges();
-
-
+*/
+    // Delete
+    Console.WriteLine("Slet post");
+    var Post= db.Posts.OrderBy(b => b.PostId).Last();
+    Console.WriteLine("Slet task");
+    db.Posts.Remove(Post);
+    db.SaveChanges();
+    
 
     }
 
-// Henter alle tasks
-app.MapGet("/get/all/tasks", (DataService service) =>
+
+// Henter alle post
+app.MapGet("/get/all/posts", (DataService service) =>
 {
-    return service.GetAllTask();
+    return service.GetAllPosts();
 });
 
 // Henter post på dets id
