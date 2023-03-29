@@ -56,7 +56,6 @@ using (var db = new TaskContext())
     Console.WriteLine("Slet task");
     db.Posts.Remove(Post);
     db.SaveChanges();
-    
 
     }
 
@@ -97,37 +96,6 @@ app.MapGet("/get/all/users", (DataService service) =>
     return service.GetAllUsers();
 });
 
-
-/*
-Ikke færdig mangler at finde den rigtig syntax 
-app.MapGet("/getallpostbyid", (DataService service, long postid) =>
-{
-    return service.GetPostById();  
-});
-*/
-
-
-//Rasmus get calls 
-/*
-//Hent user 
-app.MapGet("/getallusers", ) =>
-{
-});
-
-//Hent post id
-app.MapGet("/getpost/{id}", ) =>
-{
-    return service.GetPost(id);
-});
-
-//Hent user id
-app.MapGet("/getuser/{id}", () =>
-{
-    return service.GetUser(id);
-});
-app.MapGet("/getallcomment/{id}"
-
-*/
 
 // Read
     Console.WriteLine("Find det sidste task");
