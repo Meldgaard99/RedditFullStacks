@@ -30,13 +30,20 @@ public class DataService
 
 
 
-//Ikke færdig, mangler at finde den korrekte syntax 
-    public List<Post> GetPostById(int postid)
+
+    public Post GetPostById(int postid)
     {
-        return db.Posts.ToList();
+        return db.Posts.Where(p => p.PostId == postid).FirstOrDefault()!;
+        
 
     }
 
+  public Comment GetCommentById(int commentid)
+    {
+        return db.Comments.Where(p => p.CommentId == commentid).FirstOrDefault()!;
+        
+
+    }
 
 
 

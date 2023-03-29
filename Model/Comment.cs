@@ -5,7 +5,7 @@ namespace RedditFullStack.models
     {
         public string Text { get; set; }
 
-        public long CommentId { get; set; }
+        public int CommentId { get; set; }
         //public EF kræver en id til at identificere primary keys! :)
         public int NumberOfVotes { get; set; }
         public int Downvote { get; set; }
