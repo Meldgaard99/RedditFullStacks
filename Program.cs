@@ -46,9 +46,9 @@ using (var db = new TaskContext())
     
     // Create
     Console.WriteLine("Submitting data to DB");
-   // db.Add(new TodoTask("tester",false));
+    db.Add(new TodoTask("tester",false));
     //db.Add(new Post("Titel","Rasmus", "test text", 5)); //Test om der er hul til post tablen!
-
+    //db.Add(new User( "Mads"));
     db.SaveChanges();
 
 
@@ -58,7 +58,7 @@ using (var db = new TaskContext())
 
 
 
-app.MapGet("/get", (DataService service) =>
+app.MapGet("/get/all/tasks", (DataService service) =>
 {
     return service.GetAllTask();
 });
@@ -68,10 +68,21 @@ app.MapGet("/get/post/{postid}", (DataService service, int postid) =>
     return service.GetPostById(postid);  
 });
 
+app.MapGet("/get/all/comments", (DataService service) =>
+{
+    return service.GetAllComments();
+});
+
 
 app.MapGet("/get/comment/{commentid}", (DataService service, int commentid) =>
 {
     return service.GetCommentById(commentid);  
+});
+
+
+app.MapGet("/get/user/{userid}", (DataService service, int userid) =>
+{
+    return service.GetUserById(userid);  
 });
 
 

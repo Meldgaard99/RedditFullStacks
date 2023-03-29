@@ -15,37 +15,41 @@ public class DataService
     }
 
 
-
  public List<TodoTask> GetAllTask()
     {
         return db.Tasks.ToList();
     }
 
+ 
 
     //henter post og returner dem som en liste
-    public List<Post> GetAllPosts()
+    public List<Comment> GetAllComments()
     {
-        return db.Posts.ToList();
+        return db.Comments.ToList();
     }
 
 
-
-
+    // Henter post på dets id
     public Post GetPostById(int postid)
     {
         return db.Posts.Where(p => p.PostId == postid).FirstOrDefault()!;
-        
 
     }
 
+    // Henter kommentaren på dets id
   public Comment GetCommentById(int commentid)
     {
         return db.Comments.Where(p => p.CommentId == commentid).FirstOrDefault()!;
         
-
     }
 
 
+ // Henter kommentaren på dets id
+  public User GetUserById(int userid)
+    {
+        return db.Users.Where(p => p.UserId == userid).FirstOrDefault()!;
+
+    }
 
 
 /*
